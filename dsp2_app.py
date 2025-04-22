@@ -37,7 +37,8 @@ features = np.array([[distance_to_solar_noon, temperature, wind_direction, wind_
 
 # Prediction button
 if st.button("Predict"):
-    features = np.array([[feature_1, feature_2]])  # Adjust based on your model's input
+    features = np.array([[distance_to_solar_noon, temperature, wind_direction, wind_speed,
+                      sky_cover, visibility, humidity, avg_wind_speed, avg_pressure]])  # Adjust based on your model's input
     features_scaled = scaler.transform(features)
     prediction = model.predict(features_scaled)
     st.write(f"Predicted Power Generation: {prediction[0]}")
